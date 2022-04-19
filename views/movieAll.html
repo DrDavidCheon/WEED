@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>모든 영화 페이지</title>
+</head>
+
+<body>
+    <p>등록된 모든 영화<br></P>
+        
+    {% for movie in movies %}
+    <p>
+        <a href="/movie/detail/{{movie.id}}/">제목:{{movie.title}}</a><br>
+        감독:{{movie.director}}<br>
+        추천수:{{movie.recom}}<br>
+    </p>
+    {% endfor %}
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>영화 상세 페이지</title>
+</head>
+
+<body>
+    <p>당신의 취향 영화 목록<br></P>
+        
+    {% for movies in movie %}
+    <p>
+        <a href="/movie/detail/{{movies.id}}/">제목:{{movies.title}}</a><br>
+        감독:{{movies.director}}<br>
+        추천수:{{movies.recom}}<br>
+    </p>
+    {% endfor %}
+</body>
+
+</html>

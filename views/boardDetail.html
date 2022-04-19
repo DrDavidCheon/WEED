@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>게시글 상세 페이지</title>
+</head>
+
+<body>
+    <h1>제목 : {{board.title}}</h1>
+        <p>영화 : <a href="/movie/detail/{{board.movieId}}">{{movie.title}}</a><br>
+        작성자 : {{board.userId}}<br>
+        내용 : {{board.content}}<br>
+        <button type="button" onclick="location.href='/board/detail/delete/{{board.id}}'">게시글삭제</button><br>
+        </p>    
+    댓글 <br>
+    {% for comment in comment %}
+        
+        {{comment.userId}} : {{comment.comment}} 
+        <button type="button" onclick="location.href='/board/comment/delete/{{comment.id}}'">삭제</button><br>
+        
+    {% endfor %}
+
+    <form id="form" action="/board/comment/{{board.id}}" method="post" >
+        댓글 등록
+        <input type="text" name="comment" placeholder="내용" /><br>
+        <button type="submit">댓글 등록</button>
+    </form>
+</body>
+
+</html>

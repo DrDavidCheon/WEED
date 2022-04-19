@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>영화 검색 목록</title>
+</head>
+
+<body>
+    <p>{{condition}} 검색 결과<br></P>
+    {%if state %}    
+    {{condition}} 검색 결과 없음<br>
+    {% else %}
+        {% for movie in movies %}
+        <p>
+            <a href="/movie/detail/{{movie.id}}/">제목:{{movie.title}}</a><br>
+            감독:{{movie.director}}<br>
+            추천수:{{movie.recom}}<br>
+        </p>
+        {% endfor %}
+    {% endif %}
+
+</body>
+
+</html>

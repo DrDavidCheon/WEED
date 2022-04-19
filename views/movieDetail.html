@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>영화 상세 페이지</title>
+</head>
+
+<body>
+    <h1>제목: {{movie.title}}</h1>
+    <p>장르: {{genre}}<br></p>
+    <p>감독: {{movie.director}}<br></p>
+    <p>배우: {{movie.actor}}<br></p>
+    <p>줄거리: {{movie.story}}<br></p>
+    <p>개봉일: {{movie.rdate}}<br></p>
+    <p>러닝타임: {{movie.rtime}}<br></p>
+    <p>추천수: {{movie.recom}}<br></p>
+    
+    <button type="button" onclick="location.href='/user/recom/{{movie.id}}' "> 추천 {{movie.recom}} </button>
+    <button type="button" onclick="location.href='/movie/update/{{movie.id}}' "> 수정  </button>
+    <button type="button" onclick="location.href='/movie/delete/{{movie.id}}' "> 삭제  </button>
+</body>
+
+</html>

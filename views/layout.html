@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>NodeJS: {{title}}</title>
+    <link rel="stylesheet" href="/main.css">
+  </head>
+  <body>
+    <header>
+      <div class="wrapper">
+        <h1><a href="/index">WEED</a></h1>
+        {% if user and user.id %}
+        <nav>
+          <ul class="menu1">
+            <li><a href="/main">화분정보</a></li>
+            <li><a href="/auth/logout">로그아웃</a></li>
+          </ul>
+        </nav>
+        {% else %}
+        <nav>
+          <ul class="menu2">
+            <li><a href="/user">회원가입</a></li>
+          </ul>
+        </nav>
+        {% endif %}
+      </div>
+    </header>
+      
+    {% block content %}
+    {% endblock %}
+  </body>
+</html>

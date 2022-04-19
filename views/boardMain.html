@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>게시글 목록</title>
+</head>
+
+<body>
+    <p>게시글 목록</P> <a href="/board/write">게시글 쓰기</a><br>
+    {% for board in boards %}
+    <p>
+        <a href="/board/detail/{{board.id}}/">번호:{{board.id}} 제목:{{board.title}}</a><br>
+    </p>
+    {% endfor %}
+    <br>
+</body>
+
+</html>

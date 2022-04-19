@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>게시물 등록</title>
+</head>
+
+<body>
+    <form id="form" action="write" method="post" >
+            <h2>게시글 등록</h2><br>
+            제목<input type="text" name="title" placeholder="글 제목" /><br>
+            영화제목<select name="movieId">
+            {% for movie in movies %}
+                <option value="{{movie.id}}">{{movie.title}}</option>
+            {% endfor %}
+            </select><br>
+            내용<input type="text" name="content" placeholder="내용" /><br>
+            <button type="submit">등록</button>
+    </form>
+</body>
